@@ -1,0 +1,14 @@
+@layer base {
+  /* max-width for .container class */
+  .container {
+    @apply mx-auto w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl;
+  }
+
+  /* sticky footer  */
+  .site {
+    @apply flex flex-col min-h-screen;
+  }
+  .site .site-main {
+    @apply grow;
+  }
+}

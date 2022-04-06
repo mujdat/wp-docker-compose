@@ -1,0 +1,31 @@
+{
+  "name": "ds-wp-theme",
+  "version": "1.0.0",
+  "repository": "https://github.com/mujdat/wp-docker-compose",
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn npm-run-all --parallel styles-dev js-dev",
+    "styles-dev": "npx tailwindcss --postcss -i ./assets/css/tailwind.css -o ./assets/css/dist/main.min.css --minify --watch",
+    "js-dev": "npx webpack build --watch",
+    "prettier-php": "yarn prettier \"**.php\" --write",
+    "prod": "npx tailwindcss --postcss -i ./assets/css/tailwind.css -o ./assets/css/dist/main.min.css --minify && npx webpack build && yarn run eslint ./assets/js/index.js && yarn run prettier-php"
+  },
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.18.1",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/line-clamp": "^0.3.1",
+    "@tailwindcss/typography": "^0.5.2",
+    "@wordpress/eslint-plugin": "^10.0.1",
+    "autoprefixer": "^10.4.2",
+    "eslint": "^8.9.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.6",
+    "postcss-import": "^14.1.0",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.0.22",
+    "webpack": "^5.69.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-glob": "^2.0.2"
+  }
+}
